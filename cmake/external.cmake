@@ -85,30 +85,30 @@ function(link_libabsl target_name)
     if (${target_type} STREQUAL "INTERFACE_LIBRARY")
         set(scope INTERFACE)
     endif()
-    if (TG_OWT_PACKAGED_BUILD)
-        find_package(absl)
-        set(absl_FOUND ${absl_FOUND} PARENT_SCOPE)
-        if (absl_FOUND)
-            target_link_libraries(${target_name}
-            ${scope}
-                absl::algorithm_container
-                absl::bind_front
-                absl::config
-                absl::core_headers
-                absl::flat_hash_map
-                absl::inlined_vector
-                absl::flags
-                absl::flags_parse
-                absl::flags_usage
-                absl::memory
-                absl::optional
-                absl::strings
-                absl::synchronization
-                absl::type_traits
-                absl::variant
-            )
-        endif()
-    endif()
+    # if (TG_OWT_PACKAGED_BUILD)
+    #     find_package(absl)
+    #     set(absl_FOUND ${absl_FOUND} PARENT_SCOPE)
+    #     if (absl_FOUND)
+    #         target_link_libraries(${target_name}
+    #         ${scope}
+    #             absl::algorithm_container
+    #             absl::bind_front
+    #             absl::config
+    #             absl::core_headers
+    #             absl::flat_hash_map
+    #             absl::inlined_vector
+    #             absl::flags
+    #             absl::flags_parse
+    #             absl::flags_usage
+    #             absl::memory
+    #             absl::optional
+    #             absl::strings
+    #             absl::synchronization
+    #             absl::type_traits
+    #             absl::variant
+    #         )
+    #     endif()
+    # endif()
     if (NOT absl_FOUND)
         target_link_libraries(${target_name} ${scope} tg_owt::libabsl)
     endif()
