@@ -156,7 +156,7 @@ link_crc32c(tg_owt)
 link_dl(tg_owt)
 
 if (TG_OWT_BUILD_AUDIO_BACKENDS AND (UNIX AND NOT APPLE))
-    link_libalsa(tg_owt)
+    # link_libalsa(tg_owt)
     link_libpulse(tg_owt)
 endif()
 
@@ -996,12 +996,12 @@ PRIVATE
     modules/audio_coding/neteq/timestamp_scaler.cc
     modules/audio_device/include/audio_device_factory.cc
     modules/audio_device/include/audio_device_factory.h
-    modules/audio_device/linux/alsasymboltable_linux.cc
-    modules/audio_device/linux/alsasymboltable_linux.h
-    modules/audio_device/linux/audio_device_alsa_linux.cc
-    modules/audio_device/linux/audio_device_alsa_linux.h
-    modules/audio_device/linux/audio_mixer_manager_alsa_linux.cc
-    modules/audio_device/linux/audio_mixer_manager_alsa_linux.h
+    # modules/audio_device/linux/alsasymboltable_linux.cc
+    # modules/audio_device/linux/alsasymboltable_linux.h
+    # modules/audio_device/linux/audio_device_alsa_linux.cc
+    # modules/audio_device/linux/audio_device_alsa_linux.h
+    # modules/audio_device/linux/audio_mixer_manager_alsa_linux.cc
+    # modules/audio_device/linux/audio_mixer_manager_alsa_linux.h
     modules/audio_device/linux/latebindingsymboltable_linux.cc
     modules/audio_device/linux/latebindingsymboltable_linux.h
     modules/audio_device/linux/audio_device_pulse_linux.cc
@@ -2484,12 +2484,12 @@ if (NOT TG_OWT_BUILD_AUDIO_BACKENDS)
     remove_target_sources(tg_owt ${webrtc_loc}
         modules/audio_device/include/audio_device_factory.cc
         modules/audio_device/include/audio_device_factory.h
-        modules/audio_device/linux/alsasymboltable_linux.cc
-        modules/audio_device/linux/alsasymboltable_linux.h
-        modules/audio_device/linux/audio_device_alsa_linux.cc
-        modules/audio_device/linux/audio_device_alsa_linux.h
-        modules/audio_device/linux/audio_mixer_manager_alsa_linux.cc
-        modules/audio_device/linux/audio_mixer_manager_alsa_linux.h
+        # modules/audio_device/linux/alsasymboltable_linux.cc
+        # modules/audio_device/linux/alsasymboltable_linux.h
+        # modules/audio_device/linux/audio_device_alsa_linux.cc
+        # modules/audio_device/linux/audio_device_alsa_linux.h
+        # modules/audio_device/linux/audio_mixer_manager_alsa_linux.cc
+        # modules/audio_device/linux/audio_mixer_manager_alsa_linux.h
         modules/audio_device/linux/latebindingsymboltable_linux.cc
         modules/audio_device/linux/latebindingsymboltable_linux.h
         modules/audio_device/linux/audio_device_pulse_linux.cc

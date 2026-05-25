@@ -63,7 +63,7 @@ if (NOT TG_OWT_BUILD_AUDIO_BACKENDS)
 elseif (UNIX AND NOT APPLE)
     target_compile_definitions(libwebrtcbuild
     INTERFACE
-        WEBRTC_ENABLE_LINUX_ALSA
+        # WEBRTC_ENABLE_LINUX_ALSA
         WEBRTC_ENABLE_LINUX_PULSE
     )
 endif()

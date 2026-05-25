@@ -229,10 +229,10 @@ int32_t AudioDeviceModuleImpl::CreatePlatformSpecificObjects() {
     // Linux PulseAudio implementation is default.
     audio_device_.reset(new AudioDeviceLinuxPulse());
     RTC_LOG(LS_INFO) << "Linux PulseAudio APIs will be utilized";
-  } else if (audio_layer == kLinuxAlsaAudio) {
+  } /*else if (audio_layer == kLinuxAlsaAudio) {
     audio_device_.reset(new AudioDeviceLinuxALSA());
     RTC_LOG(LS_WARNING) << "Linux ALSA APIs will be utilized.";
-  }
+  }*/
 #endif  // #if !defined(WEBRTC_ENABLE_LINUX_PULSE)
 #endif  // #if defined(WEBRTC_LINUX)
 
