@@ -75,6 +75,7 @@ include(cmake/external.cmake)
 include(cmake/libpffft.cmake)
 include(cmake/librnnoise.cmake)
 include(cmake/libyuv.cmake)
+include(cmake/libopenh264.cmake)
 if (APPLE)
     include(cmake/libsdkmacos.cmake)
 endif()
@@ -131,6 +132,7 @@ PRIVATE
     tg_owt::libpffft
     tg_owt::librnnoise
     tg_owt::libyuv
+    tg_owt::libopenh264
 )
 
 if (is_x86 OR is_x64)
@@ -149,7 +151,6 @@ link_openssl(tg_owt)
 link_ffmpeg(tg_owt)
 link_opus(tg_owt)
 link_libabsl(tg_owt)
-link_libopenh264(tg_owt)
 link_libsrtp(tg_owt)
 link_libvpx(tg_owt)
 link_crc32c(tg_owt)
@@ -2645,6 +2646,7 @@ list(APPEND export_targets
     libpffft
     librnnoise
     libyuv
+    libopenh264
 )
 if (NOT absl_FOUND)
     include(cmake/libabsl.cmake)

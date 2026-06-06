@@ -114,19 +114,6 @@ function(link_libabsl target_name)
     endif()
 endfunction()
 
-# libopenh264
-set(TG_OWT_OPENH264_INCLUDE_PATH "" CACHE STRING "Include path for openh264.")
-set(TG_OWT_OPENH264_LIB_PATH "" CACHE STRING "Static library path for openh264.")
-
-function(link_libopenh264 target_name)
-    target_include_directories(${target_name} SYSTEM
-    PRIVATE
-        ${TG_OWT_OPENH264_INCLUDE_PATH}
-    )
-
-    target_link_libraries(${target_name} PRIVATE ${TG_OWT_OPENH264_LIB_PATH})
-endfunction()
-
 # libSRTP
 function(link_libsrtp target_name)
     if (TG_OWT_PACKAGED_BUILD)
