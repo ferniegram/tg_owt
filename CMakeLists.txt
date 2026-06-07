@@ -2697,16 +2697,16 @@ install(
     FILES_MATCHING PATTERN "*.h"
 )
 
-install(
-    EXPORT tg_owtTargets
-    NAMESPACE tg_owt::
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/tg_owt
-)
+# install(
+#     EXPORT tg_owtTargets
+#     NAMESPACE tg_owt::
+#     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/tg_owt
+# )
 
-install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/tg_owtConfig.cmake
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/tg_owt
-)
+# install(
+#     FILES ${CMAKE_CURRENT_BINARY_DIR}/tg_owtConfig.cmake
+#     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/tg_owt
+# )
 
 # Install additional static libraries
 
