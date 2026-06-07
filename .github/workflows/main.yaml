@@ -50,6 +50,7 @@ jobs:
         fi
 
         mb2 -t SailfishOS-\${INPUT_RELEASE}-\${INPUT_ARCH} build-shell cmake .. -GNinja \
+            -DCMAKE_INSTALL_LIBDIR=lib \
             -DCMAKE_C_COMPILER_LAUNCHER=ccache \
             -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
             -DCMAKE_BUILD_TYPE=Release \
