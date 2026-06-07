@@ -1,0 +1,20 @@
+From 8023d80a76090469e19174c91ab469134988ad42 Thu, 9 May 2019 13:33:58 +0200
+From: Andrew Branson <andrew.branson@jollamobile.com>
+Date: Thu, 9 May 2019 13:33:15 +0200
+Subject: [PATCH] Skip diff version check, that doesn't work with busybox
+
+diff --git a/configure b/configure
+index 6204f10..5e3f4b2 100755
+--- a/configure
++++ b/configure
+@@ -191,10 +191,6 @@
+     [ -f "${source_path}/${t}.mk" ] && enable_feature ${t}
+ done
+ 
+-if ! diff --version >/dev/null; then
+-  die "diff missing: Try installing diffutils via your package manager."
+-fi
+-
+ if ! perl --version >/dev/null; then
+     die "Perl is required to build"
+ fi

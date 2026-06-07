@@ -76,6 +76,7 @@ include(cmake/libpffft.cmake)
 include(cmake/librnnoise.cmake)
 include(cmake/libyuv.cmake)
 include(cmake/libopenh264.cmake)
+include(cmake/libvpx.cmake)
 if (APPLE)
     include(cmake/libsdkmacos.cmake)
 endif()
@@ -133,6 +134,7 @@ PRIVATE
     tg_owt::librnnoise
     tg_owt::libyuv
     tg_owt::libopenh264
+    tg_owt::libvpx
 )
 
 if (is_x86 OR is_x64)
@@ -152,7 +154,7 @@ link_ffmpeg(tg_owt)
 link_opus(tg_owt)
 link_libabsl(tg_owt)
 # link_libsrtp(tg_owt)
-link_libvpx(tg_owt)
+# link_libvpx(tg_owt)
 link_crc32c(tg_owt)
 link_dl(tg_owt)
 
@@ -2704,4 +2706,12 @@ install(
 install(
     FILES ${CMAKE_CURRENT_BINARY_DIR}/tg_owtConfig.cmake
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/tg_owt
+)
+
+# Install additional static libraries
+
+get_target_property(LIBVPX_STATIC_PATH tg_owt::libvpx IMPORTED_LOCATION)
+install(
+    FILES ${LIBVPX_STATIC_PATH}
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
